@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>
+            E3Retail
+        </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet" media="screen,projection,print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&amp;display=swap" media="screen,projection,print">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital@0;1&amp;display=swap" media="screen,projection,print">
+
+        <link rel="stylesheet" href="/stylesheets/globals.css" media="screen,projection,print">
+        <link rel="stylesheet" href="/stylesheets/header.css" media="screen,projection,print">
+        <link rel="stylesheet" href="/stylesheets/footer.css" media="screen,projection,print">
+        <link rel="stylesheet" href="/stylesheets/index.css" media="screen,projection,print">
+
+
+        <meta name="title" content="E3Retail - Home">
+        <meta
+            name="description"
+            content="An E-commerce products-list website that demonstrates the application of Elasticsearch in retail & online shopping"
+        />
+        <meta
+            name="keywords"
+            content="elasticsearch, e-commerce, online shopping, retail, egen solutions, ashwin hariharan, projects, open source, tutorial"
+        >
+        <meta property="title" content="E3Retail - Home" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="E3Retail - Home">
+        <meta property="og:description" content="An E-commerce products-list website that demonstrates the application of Elasticsearch in retail & online shopping">
+        <meta property="og:image" content="https://raw.githubusercontent.com/booleanhunter-tech-blog/e3-retail/main/public/images/e3-retail_home.png">
+        <meta property="og:image:width" content="640" />
+        <meta property="og:image:height" content="442" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="E3Retail - Home">
+        <meta property="twitter:description" content="An E-commerce products-list website that demonstrates the application of Elasticsearch in retail & online shopping">
+        <meta property="twitter:image" content="https://raw.githubusercontent.com/booleanhunter-tech-blog/e3-retail/main/public/images/e3-retail_home.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="E3Retail - Home">
+        <meta name="twitter:description" content="An E-commerce products-list website that demonstrates the application of Elasticsearch in retail & online shopping">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/booleanhunter-tech-blog/e3-retail/main/public/images/e3-retail_home.png">
+        <meta name="twitter:site" content="@booleanhunter">
+        <meta name="twitter:creator" content="@booleanhunter">
+    </head>
+
+    <body>
+        {{> header }}
+        <form
+            id="filters"
+            class="filters"
+            action="/products/search"
+            name="filters"
+            method="get">
+        </form>
+        <main>
+            <h2>
+                Product Categories
+            </h2>
+            {{#if product_categories }}
+                {{> product_categories productCategories=productCategories}}
+            {{/if}}
+
+            {{#if error }}
+                <p>
+                    An unexpected error occurred. Please report a bug 🐞 on Github.
+                </p>
+
+                <h3> Error details </h3>
+
+                <p>{{error.status}}</p>
+                <p>
+                    <code>
+                        {{error.message}}
+                    </code>
+                </p>
+            {{/if}}
+
+        </main>
+
+        {{> footer }}
+
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+        <script type="module" src="/scripts/handlebars-templates.js"></script>
+        <script type="module" src="/modules/index.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,36 @@
+
+<footer class="product-list-footer" aria-label="Pagination">
+    {{#if paginationInfo.totalPages}}
+        <h2>
+            Page {{paginationInfo.currentPage}} / {{paginationInfo.totalPages}} 
+        </h2>
+        <nav>
+            <section class="pagination">
+
+                {{#each paginationInfo.pagination}}
+                    <button
+                        type="submit"
+                        form="filters"
+                        name="page"
+                        value="{{this.value}}"
+                        aria-label="Page number"
+                        {{#if this.disabled}}disabled{{/if}}
+                        {{#if this.active}}
+                            class="active"
+                        {{/if}}
+                        class= "{{this.class}}"
+                    >
+                        {{this.name}}
+                    </button>
+                {{/each}}
+
+            </section>
+        </nav>
+
+    {{ else }}
+        <h2>
+            No results
+        </h2>
+
+    {{/if}}
+</footer>

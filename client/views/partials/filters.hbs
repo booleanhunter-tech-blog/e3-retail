@@ -1,0 +1,149 @@
+<fieldset name="brands">
+    <legend>
+        <h3>
+            Brands
+        </h3>
+    </legend>
+
+    <ol class="filter-group">
+        {{#each filters.brands}}
+        <li>
+            <input
+                type="checkbox"
+                name="brands"
+                id="brand_{{this.id}}"
+                value="{{this.value}}"
+                {{#if this.active}}checked{{/if}}
+            >
+            <label for="brand_{{this.id}}">
+                {{this.name}}
+            </label>
+
+        </li>
+
+        {{/each}}
+    </ol>
+</fieldset>
+
+<fieldset name="delivery">
+    <legend>
+        <h3>
+            Delivery
+        </h3>
+    </legend>
+    <div class="filter-group">
+        {{#each filters.delivery}}
+            <label for="delivery_{{this.id}}">{{this.name}}</label>
+            <input
+                type="checkbox"
+                name="delivery"
+                id="delivery_{{this.id}}"
+                value="{{this.value}}"
+                {{#if this.active}}checked{{/if}} >
+        {{/each}}
+    </div>
+</fieldset>
+
+<fieldset name="pricing">
+    <legend>
+        <h3>
+            Pricing
+        </h3>
+    </legend>
+
+    <div class="filter-group">
+        <div>
+            <label for="price_min">Min</label>
+            <input
+                type="number"
+                name="price_min"
+                id="price_min"
+                placeholder="Minimum"
+                {{#with filters.price}} value={{this.gte}} {{/with}}
+                >
+        </div>
+        <div>
+            <label for="price_max">Max</label>
+            <input
+                type="number"
+                name="price_max"
+                id="price_max"
+                placeholder="Maximum"
+                {{#with filters.price}} value={{this.lte}} {{/with}}
+            >
+        </div>
+    </div>
+</fieldset>
+
+<fieldset name="categories">
+    <legend>
+        <h3>
+            Categories
+        </h3>
+    </legend>
+
+    <ol class="filter-group">
+        {{#each filters.categories}}
+        <li>
+            <input
+                type="checkbox"
+                name="categories"
+                id="category_{{this.id}}"
+                value="{{this.value}}"
+                {{#if this.active}}checked{{/if}}>
+            <label for="category_{{this.id}}">
+                {{this.name}}
+            </label>
+
+        </li>
+
+        {{/each}}
+    </ol>
+</fieldset>
+
+<fieldset name="ratings">
+    <legend>
+        <h3>
+            Ratings
+        </h3>
+    </legend>
+
+    <ol class="filter-group">
+        {{#each filters.ratings}}
+            <li>
+                <input
+                    type="radio"
+                    name="ratings"
+                    id="ratings_{{this.id}}"
+                    value="{{this.value}}"
+                    {{#if this.active}}checked{{/if}}>
+                <label
+                    for="ratings_{{this.id}}"
+                    aria-label="{{this.name}}"
+                    class="ratings"
+                    style="--rating: {{this.value}};">
+                    & up
+                </label>
+
+            </li>
+        {{/each}}
+    </ol>
+</fieldset>
+
+<fieldset name="sort">
+    <legend>
+        <h3>
+            Sort by
+        </h3>
+    </legend>
+
+    <select name="sort" id="sort-order" aria-label="Sort by">
+        {{#each filters.sort}}
+            <option value="{{this.value}}" {{#if this.active}}selected{{/if}}>
+                {{this.name}}
+            </option>
+        {{/each}}
+    </select>
+</fieldset>
+
+<button type="submit" name="action" value="filter">Search</button>

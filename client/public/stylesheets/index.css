@@ -1,0 +1,81 @@
+main {
+    max-width: 98vw;
+    margin: auto;
+    padding-left: var(--font-size-r-root);
+    padding-right: var(--font-size-r-root);
+
+    font-size: var(--font-size-r-root);
+}
+
+@media (max-width: 30rem) {
+    main {
+        font-size: var(--font-size-xs-root);
+    }
+}
+
+main > h2 {
+    margin-top: var(--font-size-r);
+    margin-bottom: var(--font-size-s);
+    
+    font-size: var(--font-size-xl);
+    text-shadow: 1px 1px 10px var(--color-separator);
+    font-weight: normal;
+    
+    text-align: center;
+}
+
+.product-categories {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    gap: var(--font-size-m);
+
+    margin: auto;
+    margin-bottom: var(--font-size-xl-root);
+    max-width: var(--max-width-list-item-root);
+
+    font-size: var(--font-size-r-root);
+    list-style-type: none;
+    text-align: center;
+}
+
+.product-categories > [role="listitem"] {
+    background-color: var(--color-soft-highlight);
+    padding: var(--font-size-r-root);
+    border-radius: 0.5em;
+    width: 28%;
+}
+
+.product-categories > [role="listitem"] > img {
+    width: 100%;
+}
+
+.product-categories > [role="listitem"] p {
+    margin-top: var(--font-size-s);
+}
+
+@media (max-width: 30rem) {
+    .product-categories {
+        font-size: var(--font-size-s-root);
+    }
+
+    .product-categories > [role="listitem"] {
+        width: unset;
+    }
+}

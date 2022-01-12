@@ -1,0 +1,88 @@
+/* CSS Resets */
+/* null margins and padding to give good cross-browser baseline */
+html, body, address, blockquote, div,
+form, fieldset, caption,
+h1, h2, h3, h4, h5, h6,
+hr, ul, li, ol, ul,
+table, tr, td, th, p, img, figure {
+	margin: 0;
+	padding: 0;
+}
+
+img, fieldset {
+	border: none;
+}
+
+/* End of CSS Resets */
+
+:root {
+    --color-primary: #003847;
+    --color-accent: #FC794A;
+    
+    --color-background: #FAFAFA;
+    --color-text: #003847;
+    --color-separator: #C0C0C0;
+    --color-soft-highlight: rgba(234, 234, 234, 0.95);
+
+    --color-dark-highlight: #545454;
+    --color-text-light: #F5F5F5;
+
+    --color-accent-text: #C93803;
+
+    --max-width-root: 95rem;
+    --max-width-list-item-root: 60rem;
+    --max-width-content-root: 70rem;
+
+    --font-size-xl-root: 2.5rem;
+    --font-size-l-root: 2rem;
+    --font-size-m-root: 1.5rem;
+    --font-size-r-root: 1rem;
+    --font-size-s-root: 0.8rem;
+    --font-size-xs-root: 0.65rem;
+
+    --font-size-xl: 2.5em;
+    --font-size-l: 2em;
+    --font-size-m: 1.5em;
+    --font-size-r: 1em;
+    --font-size-s: 0.8em;
+    --font-size-xs: 0.65em;
+
+    --font-icon-family: 'Font Awesome\ 5 Free';
+
+    --star-size: 1.3em;
+    --star-color: #fff;
+    --star-background: #FFC107;
+}
+
+body {
+    font-family: Nunito, x  sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-accent-text);
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: var(--color-separator);
+}
+
+
+::selection {
+    color: var(--color-background);
+    background: var(--color-text);
+}
+
+::-moz-selection {
+    color: var(--color-background);
+    background: var(--color-text);
+}

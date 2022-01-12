@@ -1,0 +1,47 @@
+
+<ol class="product-list">
+    {{#each products}}
+    <li role="article">
+        <section class="product-img">
+            <img
+                src="{{this.images.[0]}}"
+                alt="Product image"
+                loading="lazy"
+                onerror="this.src='/images/product_types/generic_product.jpg'"
+            >
+        </section>
+        <section>
+            <h3>
+                <a href="{{this.url}}" target="_blank">
+                    {{this.name}}
+                </a>
+            </h3>
+            <footer>
+                <p>
+                    <data
+                        itemprop="ratings"
+                        class="ratings"
+                        style="--rating: {{this.rating}};"
+                        value="{{this.rating}}">
+                    </data>
+                </p>
+                <p>
+                    <data
+                        itemprop="selling-price"
+                        class="selling-price"
+                        value="{{this.discountedPrice}}">
+                        {{this.discountedPrice}}
+                    </data>
+
+                    <data
+                        itemprop="retail-price"
+                        class="retail-price"
+                        value="{{this.retailPrice}}">
+                        {{this.retailPrice}}
+                    </data>
+                </p>
+            </footer>
+        </section>
+    </li>
+    {{/each}}
+</ol>

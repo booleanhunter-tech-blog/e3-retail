@@ -1,0 +1,25 @@
+{
+  "name": "e3retail",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=e3retail:*, node ./bin/www",
+    "create-index": "DEBUG=e3retail:*, node utils/scripts/create-index.js",
+    "create-templates": "handlebars client/views/partials/* -c -f client/public/scripts/handlebars-templates.js"
+  },
+  "dependencies": {
+    "@opensearch-project/opensearch": "^1.0.2",
+    "apollo-server-core": "^3.6.6",
+    "apollo-server-express": "^3.6.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.17.1",
+    "graphql": "^16.3.0",
+    "handlebars": "^4.3.5",
+    "hbs": "~4.0.4",
+    "helmet": "^4.6.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
+}
