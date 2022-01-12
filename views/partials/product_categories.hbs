@@ -1,0 +1,13 @@
+<ol class="product-categories">
+    {{#each productCategories}}
+        <a role="listitem" href="{{this.url}}">
+            <img src="{{this.imageUrl}}">
+            <h3>
+                {{this.name}}
+            </h3>
+            <p>
+                {{this.doc_count}} products
+            </p>
+        </a>
+    {{/each}}
+</ol>

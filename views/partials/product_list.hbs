@@ -1,0 +1,46 @@
+<ol class="product-list">
+    {{#each productsInfo.products}}
+    <li role="article">
+        <section class="product-img">
+            <img
+                src="{{imageProxy this._source.images.[0]}}"
+                alt="Product image"
+                loading="lazy"
+                onerror="this.src='/images/product_types/generic_product.jpg'"
+            >
+        </section>
+        <section>
+            <h3>
+                <a href="{{this._source.product_url}}" target="_blank">
+                    {{this._source.product_name}}
+                </a>
+            </h3>
+            <footer>
+                <p>
+                    <data
+                        itemprop="ratings"
+                        class="ratings"
+                        style="--rating: {{this._source.product_rating}};"
+                        value="{{this._source.product_rating}}">
+                    </data>
+                </p>
+                <p>
+                    <data
+                        itemprop="selling-price"
+                        class="selling-price"
+                        value="{{this._source.discounted_price}}">
+                        {{this._source.discounted_price}}
+                    </data>
+
+                    <data
+                        itemprop="retail-price"
+                        class="retail-price"
+                        value="{{this._source.retail_price}}">
+                        {{this._source.retail_price}}
+                    </data>
+                </p>
+            </footer>
+        </section>
+    </li>
+    {{/each}}
+</ol>

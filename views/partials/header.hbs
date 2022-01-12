@@ -1,0 +1,53 @@
+<header class="body-header">
+    <nav>
+        <section class="nav-item">
+            <h1>
+                <a href="/">
+                    E³Retail
+                </a>
+            </h1>
+        </section>
+        <section class="nav-item">
+            <div class="form-items">
+                <label for="input-search">
+                    Search
+                </label>
+                <input
+                    id="search-text"
+                    type="search"
+                    placeholder="search anything"
+                    form="filters"
+                    name="search_text"
+                    list="search-text-suggestions"
+                    value="{{#if searchParams.search_text}}{{searchParams.search_text}}{{/if}}"
+                >
+                <button type="submit" form="filters" name="action" value="search" aria-label="Search">
+                    <i class="fa fa-search"></i>
+                </button>
+
+                <datalist id="search-text-suggestions">
+
+                </datalist>
+            </div>
+        </section>
+        <ul class="nav-item">
+            <li>
+                <a href="https://github.com/booleanhunter-tech-blog/e3-retail" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>
+                        Github
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://egen.solutions/articles/how-to-use-elasticsearch-to-create-an-exceptional-user-experience-in-retail/" target="_blank">
+                    <i class="fas fa-info-circle"></i>
+                    <span>
+                        About
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

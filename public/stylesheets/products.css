@@ -1,0 +1,177 @@
+main {
+    max-width: var(--max-width-root);
+    margin: auto;
+    margin-top: var(--font-size-m);
+    padding-left: var(--font-size-r-root);
+    padding-right: var(--font-size-r-root);
+
+    font-size: var(--font-size-r-root);
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    gap: var(--font-size-r);
+}
+
+main > :nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    width: 100%;
+    max-width: 30%;
+}
+
+main > :nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+@media (max-width: 30rem) {
+    main {
+        font-size: var(--font-size-xs-root);
+
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    main > :nth-child(1) {
+        max-width: unset;
+
+        padding-bottom: 1em;
+
+        border-bottom-style: solid;
+        border-bottom-width: 0.1em;
+        border-color: var(--color-separator);
+    }
+}
+
+main h2 {
+    margin-bottom: var(--font-size-s);
+    text-shadow: 1px 1px 10px var(--color-separator);
+    text-align: center;
+}
+
+main > * {
+    margin-top: var(--font-size-s);
+}
+
+main > :nth-child(1) h2 {
+    text-shadow: 1px 1px 10px var(--color-separator);
+    font-weight: normal;
+}
+
+main > :nth-child(2) > h2 {
+    font-size: var(--font-size-l);
+}
+
+.product-list {
+    max-width: var(--max-width-list-item-root);
+    margin: auto;
+    margin-bottom: var(--font-size-xl-root);
+
+    font-size: var(--font-size-r-root);
+}
+
+/* Product list footer pagination rules */
+
+footer.product-list-footer > h2 {
+    font-weight: normal;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    gap: var(--font-size-xs);
+    
+    margin-top: var(--font-size-s);
+
+    list-style-type: none;
+    font-size: var(--font-size-r);
+}
+
+.pagination > button {
+    height: var(--font-size-r);
+    line-height: 0.1em;
+    font-size: var(--font-size-r);
+    padding: var(--font-size-s);
+    border: none;
+    text-align: center;
+    background: none;
+}
+
+.pagination > button:not(.presentation):hover {
+    background: var(--color-soft-highlight);
+}
+
+.pagination > button.previous, .pagination > button.next {
+    border: solid 0.1em;
+}
+
+.pagination > .active {
+    border-style: solid;
+    border-color: var(--color-accent);
+}
+
+/* End of product list footer pagination rules */

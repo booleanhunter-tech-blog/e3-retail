@@ -1,0 +1,21 @@
+{
+  "name": "e3retail",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=e3retail:*, node ./bin/www",
+    "create-index": "DEBUG=e3retail:*, node utils/scripts/create-index.js"
+  },
+  "dependencies": {
+    "@opensearch-project/opensearch": "^1.0.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "helmet": "^4.6.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "peer": "^0.6.1"
+  }
+}
